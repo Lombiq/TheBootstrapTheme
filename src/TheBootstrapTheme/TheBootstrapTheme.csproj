@@ -6,11 +6,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="OrchardCore.Menu" Version="3.0.0" />
-    <PackageReference Include="OrchardCore.Theme.Targets" Version="3.0.0" />
-    <PackageReference Include="OrchardCore.ContentManagement" Version="3.0.0" />
-    <PackageReference Include="OrchardCore.DisplayManagement" Version="3.0.0" />
-    <PackageReference Include="OrchardCore.ResourceManagement" Version="3.0.0" />
+    <PackageReference Include="OrchardCore.Menu" Version="4.0.0-preview-19065" />
+    <PackageReference Include="OrchardCore.Theme.Targets" Version="4.0.0-preview-19065" />
+    <PackageReference Include="OrchardCore.ContentManagement" Version="4.0.0-preview-19065" />
+    <PackageReference Include="OrchardCore.DisplayManagement" Version="4.0.0-preview-19065" />
+    <PackageReference Include="OrchardCore.ResourceManagement" Version="4.0.0-preview-19065" />
   </ItemGroup>
 
   <!-- Necessary to prevent "NU1903: Package 'SQLitePCLRaw.lib.e_sqlite3' 2.1.11 has a known high severity
