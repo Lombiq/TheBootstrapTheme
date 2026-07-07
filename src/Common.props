@@ -2,8 +2,8 @@
 
   <PropertyGroup>
     <Authors>Antoine Griffard</Authors>
-    <RepositoryUrl>https://github.com/agriffard/TheBootstrapTheme.OrchardCore</RepositoryUrl>
-    <PackageProjectUrl>https://github.com/agriffard/TheBootstrapTheme.OrchardCore</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/agriffard/TheBootstrapTheme</RepositoryUrl>
+    <PackageProjectUrl>https://github.com/agriffard/TheBootstrapTheme</PackageProjectUrl>
     <TargetFramework>net8.0</TargetFramework>
     <VersionSuffix Condition="'$(VersionSuffix)'!='' AND '$(BuildNumber)' != ''">$(VersionSuffix)-$(BuildNumber)</VersionSuffix>
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
