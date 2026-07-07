@@ -6,7 +6,7 @@
 
     if ((bool)Model.HasItems)
     {
-        var themeSettings = Site.As<ContentItem>("TheBootstrapThemeSettings");
+        var themeSettings = Site.GetOrCreate<ContentItem>("TheBootstrapThemeSettings");
         var nav = themeSettings?.Content?.TheBootstrapThemeSettings?.Navigation.Text ?? string.Empty;
         tag.AddCssClass(nav != "FixedBottom" ? "dropdown" : "dropup");
     }
