@@ -17,8 +17,6 @@
     {
       "name": "Feature",
       "enable": [
-        "Application.Default",
-        "Workshop.Web",
         "OrchardCore.Settings",
         "OrchardCore.Admin",
         "OrchardCore.AdminMenu",
@@ -48,7 +46,6 @@
         "OrchardCore.Scripting",
         "OrchardCore.Layers",
         "OrchardCore.Lists",
-        "OrchardCore.Lucene",
         "OrchardCore.Markdown",
         "OrchardCore.Media",
         "OrchardCore.Title",
@@ -63,10 +60,7 @@
         "OrchardCore.Themes",
         "OrchardCore.Workflows",
         "OrchardCore.Workflows.Http",
-        "Prism.OrchardCore",
         "TheAdmin",
-        "TheAgencyTheme",
-        "TheBlogTheme",
         "TheBootstrapTheme"
       ]
     },
@@ -798,19 +792,6 @@
                   "Position": "5"
                 }
               }
-            },
-            {
-              "PartName": "DisqusPart",
-              "Name": "DisqusPart",
-              "Settings": {
-                "ContentTypePartSettings": {
-                  "Position": "4"
-                },
-                "DisqusPartSettings": {
-                  "ShortName": "orchardcore"
-                },
-                "ContentIndexSettings": {}
-              }
             }
           ]
         },
@@ -1410,16 +1391,12 @@
                 "ContentPartFieldSettings": {
                   "DisplayName": "Content",
                   "Editor": "Multiline",
-                  "DisplayMode": "Prism",
                   "Position": "0"
                 },
                 "HtmlFieldSettings": {},
                 "HtmlFieldTrumbowygEditorSettings": {
                   "Options": "{\r\n    autogrow: true,\r\n    btns: [\r\n        [\"viewHTML\"],\r\n        [\"undo\", \"redo\"],\r\n        [\"formatting\"],\r\n        [\"strong\", \"em\", \"del\"],\r\n        [\"foreColor\", \"backColor\"],\r\n        [\"superscript\", \"subscript\"],\r\n        [\"link\"],\r\n        [\"image\"],\r\n        [\"align\"],\r\n        [\"unorderedList\", \"orderedList\"],\r\n        [\"horizontalRule\"],\r\n        [\"removeformat\"],\r\n        [\"fullscreen\"]\r\n    ],\r\n    btnsDef: {\r\n        align: {\r\n            dropdown: [\"justifyLeft\", \"justifyCenter\", \"justifyRight\", \"justifyFull\"],\r\n            ico: \"justifyLeft\"\r\n        },\r\n        image: {\r\n            dropdown: [\"insertImage\", \"base64\", \"noembed\"],\r\n            ico: \"insertImage\"\r\n        }\r\n    }\r\n}",
                   "InsertMediaWithUrl": true
-                },
-                "HtmlFieldPrismDisplaySettings": {
-                  "Language": "html"
                 }
               }
             }
@@ -1773,16 +1750,6 @@
             "ContentPartSettings": {
               "Attachable": true,
               "Description": "Provides a way to define the url that is used to render your content item."
-            }
-          },
-          "ContentPartFieldDefinitionRecords": []
-        },
-        {
-          "Name": "DisqusPart",
-          "Settings": {
-            "ContentPartSettings": {
-              "Attachable": true,
-              "Description": "Provides a Disqus comment section for your content item."
             }
           },
           "ContentPartFieldDefinitionRecords": []
@@ -2851,9 +2818,6 @@
           "ContainedPart": {
             "ListContentItemId": "4h44aa08kqegq3z7br9qvq5dmc",
             "Order": 0
-          },
-          "DisqusPart": {
-            "ShowComments": false
           }
         },
         {
@@ -2934,8 +2898,7 @@
             "ListContentItemId": "4h44aa08kqegq3z7br9qvq5dmc",
             "Order": 0
           },
-          "CommonPart": {},
-          "DisqusPart": {}
+          "CommonPart": {}
         },
         {
           "ContentItemId": "42yss79jxc8h32tvt1hzrdac51",
@@ -2972,9 +2935,6 @@
           "ContainedPart": {
             "ListContentItemId": "4f4y3r3dykqwbrza3n7awptjmq",
             "Order": 0
-          },
-          "DisqusPart": {
-            "ShowComments": true
           }
         },
         {
@@ -3012,8 +2972,7 @@
           "ContainedPart": {
             "ListContentItemId": "4f4y3r3dykqwbrza3n7awptjmq",
             "Order": 0
-          },
-          "DisqusPart": {}
+          }
         },
         {
           "ContentItemId": "461hnn716pnaxwwcgp73zq1ymj",
@@ -3050,8 +3009,7 @@
           "ContainedPart": {
             "ListContentItemId": "4f4y3r3dykqwbrza3n7awptjmq",
             "Order": 0
-          },
-          "DisqusPart": {}
+          }
         },
         {
           "ContentItemId": "43bvpm7y0gkfczsch6dh10j4w7",
@@ -3089,8 +3047,7 @@
             "ListContentItemId": "4f4y3r3dykqwbrza3n7awptjmq",
             "Order": 0
           },
-          "CommonPart": {},
-          "DisqusPart": {}
+          "CommonPart": {}
         },
         {
           "ContentItemId": "4f4y3r3dykqwbrza3n7awptjmq",
@@ -3853,7 +3810,7 @@
           "Description": null
         },
         "Content__BlogPost": {
-          "Content": "{% zone \"AsideFirst\" %}\r\n<h1>{{ Model.ContentItem | display_text }}</h1>\r\n<ol class=\"breadcrumb\">\r\n  <li class=\"breadcrumb-item\">\r\n    <a href=\"/\">Home</a>\r\n  </li>\r\n  <li class=\"breadcrumb-item active\">{{ Model.ContentItem | display_text }}</li>\r\n</ol>\r\n{% assign content = Model.ContentItem.Content[Model.ContentItem.ContentType] %}\r\n<div class=\"col-lg-12\">\r\n  <img class=\"img-fluid rounded\" src=\"{{ content.Picture.Paths.first | asset_url | resize_url: width:900 }}\" alt=\"\">\r\n  <hr>\r\n  {% assign format = \"dd MMMM yyyy HH:mm\" | t %}\r\n  {% assign dateTime = \"DateTime\" | shape_new: utc: Model.ContentItem.CreatedUtc, format: format | shape_stringify %}\r\n  <p>Posted on {{ \"{0}\" | t: dateTime | raw }}</p>\r\n  <hr>       \r\n{{ Model.Content.HtmlBodyPart | shape_render }}\r\n{{ Model.Content.DisqusPart | shape_render }}\r\n</div>\r\n{% endzone %}",
+          "Content": "{% zone \"AsideFirst\" %}\r\n<h1>{{ Model.ContentItem | display_text }}</h1>\r\n<ol class=\"breadcrumb\">\r\n  <li class=\"breadcrumb-item\">\r\n    <a href=\"/\">Home</a>\r\n  </li>\r\n  <li class=\"breadcrumb-item active\">{{ Model.ContentItem | display_text }}</li>\r\n</ol>\r\n{% assign content = Model.ContentItem.Content[Model.ContentItem.ContentType] %}\r\n<div class=\"col-lg-12\">\r\n  <img class=\"img-fluid rounded\" src=\"{{ content.Picture.Paths.first | asset_url | resize_url: width:900 }}\" alt=\"\">\r\n  <hr>\r\n  {% assign format = \"dd MMMM yyyy HH:mm\" | t %}\r\n  {% assign dateTime = \"DateTime\" | shape_new: utc: Model.ContentItem.CreatedUtc, format: format | shape_stringify %}\r\n  <p>Posted on {{ \"{0}\" | t: dateTime | raw }}</p>\r\n  <hr>       \r\n{{ Model.Content.HtmlBodyPart | shape_render }}\r\n</div>\r\n{% endzone %}",
           "Description": null
         },
         "Content_Summary__BlogPost": {
