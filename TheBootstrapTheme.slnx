@@ -1,0 +1,19 @@
+<Solution>
+  <Configurations>
+    <Platform Name="Any CPU" />
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Folder Name="/Solution Items/">
+    <File Path="appveyor.yml" />
+    <File Path="LICENSE" />
+    <File Path="NuGet.config" />
+    <File Path="README.md" />
+  </Folder>
+  <Folder Name="/src/">
+    <File Path="src/Common.props" />
+    <File Path="src/Directory.Build.props" />
+    <Project Path="src/TheBootstrapTheme.Samples.Web/TheBootstrapTheme.Samples.Web.csproj" />
+    <Project Path="src/TheBootstrapTheme/TheBootstrapTheme.csproj" />
+  </Folder>
+</Solution>
