@@ -1,7 +1,7 @@
 @using OrchardCore.Entities
 @using OrchardCore.ContentManagement
 @{
-    var themeSettings = Site.As<ContentItem>("TheBootstrapThemeSettings");
+    var themeSettings = Site.GetOrCreate<ContentItem>("TheBootstrapThemeSettings");
     var head = themeSettings?.Content?.TheBootstrapThemeSettings?.Head?.Text ?? string.Empty;
     var foot = themeSettings?.Content?.TheBootstrapThemeSettings?.Foot?.Text ?? string.Empty;
     var bg = themeSettings?.Content?.TheBootstrapThemeSettings?.Background?.Text ?? "dark";
