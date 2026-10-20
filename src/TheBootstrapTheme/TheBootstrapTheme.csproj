@@ -13,4 +13,9 @@
     <PackageReference Include="OrchardCore.ResourceManagement" Version="3.0.1" />
   </ItemGroup>
 
+  <!-- Security Updates for Orchard Core - make sure to check if these are still necessary -->
+  <ItemGroup>
+    <PackageReference Include="System.Security.Cryptography.Pkcs" Version="10.0.13" NoWarn="NU1510" />
+  </ItemGroup>
+
 </Project>
